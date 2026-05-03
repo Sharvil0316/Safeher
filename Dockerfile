@@ -2,11 +2,11 @@
 FROM maven:3.9.6-eclipse-temurin-11 AS build
 WORKDIR /app
 # First copy only pom.xml to cache the dependencies download step
-COPY WomenSafetyApp/pom.xml .
+COPY pom.xml .
 # Download dependencies (this will be cached unless pom.xml changes)
 RUN mvn dependency:go-offline -B
 # Now copy the source code
-COPY WomenSafetyApp/src ./src
+COPY src ./src
 # Build the WAR file without running tests
 RUN mvn clean package -DskipTests
 
