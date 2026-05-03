@@ -1,0 +1,25 @@
+# Maven build directory
+target/
+
+# IDE files (Eclipse, IntelliJ, VS Code)
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# Compiled class file
+*.class
+
+# Temporary or local files
+maven.zip
+maven-temp/
+cloudflared.exe
+
+# OS generated files
+.DS_Store
+Thumbs.db
