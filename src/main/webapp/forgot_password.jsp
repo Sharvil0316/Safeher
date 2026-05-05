@@ -21,13 +21,8 @@
 
     <div class="auth-wrapper">
         <div class="auth-container">
-            <div class="forgot-icon-wrapper">
-                <div class="forgot-icon-circle">
-                    <ion-icon name="lock-open-outline"></ion-icon>
-                </div>
-            </div>
-            <h2>Forgot Password?</h2>
-            <p class="auth-subtitle">No worries! Enter your registered email and we'll send you a reset code.</p>
+            <h2>Reset Password</h2>
+            <p class="auth-subtitle">Enter your email address and we'll send you a temporary password.</p>
 
             <%
                 String error = request.getParameter("error");
@@ -45,31 +40,22 @@
                 </div>
             <% } %>
 
-            <form action="forgot-password" method="POST" id="forgotForm">
+            <form action="forgotPassword" method="POST">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required placeholder="Enter your registered email">
                 </div>
 
-                <button type="submit" class="btn btn-primary w-full mt-2" id="submitBtn" style="padding: 0.9rem; font-size: 1rem; justify-content: center;">
-                    <ion-icon name="mail-outline"></ion-icon> Send Reset Code
+                <button type="submit" class="btn btn-primary w-full mt-2" style="padding: 0.9rem; font-size: 1rem; justify-content: center;">
+                    <ion-icon name="mail-outline"></ion-icon> Send Temporary Password
                 </button>
             </form>
 
-            <p class="auth-link" style="margin-top: 2rem;">
-                Remember your password? <a href="login.jsp">Sign In</a>
+            <p class="auth-link" style="margin-top: 1.5rem;">
+                Remembered your password? <a href="login.jsp">Sign In</a>
             </p>
         </div>
     </div>
-
-    <script>
-        document.getElementById('forgotForm').addEventListener('submit', function() {
-            var btn = document.getElementById('submitBtn');
-            btn.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Sending...';
-            btn.disabled = true;
-            btn.style.opacity = '0.7';
-        });
-    </script>
 
 </body>
 </html>
